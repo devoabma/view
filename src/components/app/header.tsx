@@ -7,17 +7,17 @@ import { ButtonShare } from './button-share'
 export function Header() {
   return (
     <>
-      <div className=" w-full h-[31.25rem] bg-foreground -skew-y-12 absolute top-[-12.9rem] -z-10" />
+      <div className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12 bg-foreground" />
       <div className="flex items-center justify-between px-4 pt-4">
         <img src={Logo} className="w-26 h-14" alt="OAB Seccional Maranhão" />
         <div className="ml-auto flex items-center gap-4">
           <ButtonShare />
           <Button
             variant="outline"
-            className="bg-foreground text-background font-semibold"
+            className="bg-foreground font-semibold text-background hover:text-foreground"
           >
             Inscrições
-            <ClipboardPenLine className="w-5 h-5 ml-2 text-background" />
+            <ClipboardPenLine className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>

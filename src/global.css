@@ -58,3 +58,16 @@
     font-family: "Plus Jakarta Sans", sans-serif;
   }
 }
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #020817;
+  border-radius: 14px;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { CardImages } from './components/app/card-image'
 import { ContentMain } from './components/app/content-main'
+import { Footer } from './components/app/footer'
 import { Header } from './components/app/header'
 import { Loading } from './components/app/loading'
 
@@ -17,7 +18,7 @@ export function App() {
   })
 
   return (
-    <div className="flex min-h-screen flex-col antialiased">
+    <div className="flex min-h-screen w-full flex-col antialiased">
       {isLoading ? (
         <Loading />
       ) : (
@@ -25,6 +26,7 @@ export function App() {
           <Header />
           <ContentMain />
           <CardImages />
+          <Footer />
         </>
       )}
     </div>
