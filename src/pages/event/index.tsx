@@ -1,6 +1,6 @@
-import { CardImages } from '@/components/app/card-image'
-import { ContentMain } from '@/components/app/content-main'
-import { Header } from '@/components/app/header'
+import { CardImages } from './card-image'
+import { ContentMain } from './content-main'
+import { Header } from './header'
 
 export function Event() {
   return (

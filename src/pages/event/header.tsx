@@ -1,8 +1,9 @@
 import { ClipboardPenLine } from 'lucide-react'
 
+import { ButtonShare } from '@/components/app/button-share'
+import { Button } from '@/components/ui/button'
+
 import Logo from '../../assets/logo-oabma.png'
-import { Button } from '../ui/button'
-import { ButtonShare } from './button-share'
 
 export function Header() {
   return (
