@@ -1,7 +1,11 @@
-import { FacebookLogo, InstagramLogo, TwitterLogo } from 'phosphor-react'
+import { FacebookLogo, InstagramLogo, TwitterLogo } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 
+import { getCurrentDateInfo } from '@/utils/get-current-date-info'
+
 export function Footer() {
+  const { year } = getCurrentDateInfo()
+
   return (
     <footer
       className={`flex min-h-16 flex-col items-center justify-center bg-foreground py-2 text-background`}
@@ -31,7 +35,7 @@ export function Footer() {
       </div>
       <span className="mt-1 text-xs">OAB Seccional do Maranhão</span>
       <p className="text-xs text-muted-foreground">
-        &copy; {new Date().getFullYear()} - Gerência de Tecnologia da Informação
+        &copy; {year} - Gerência de Tecnologia da Informação
       </p>
     </footer>
   )

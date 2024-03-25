@@ -1,10 +1,13 @@
 import { Separator } from '@/components/ui/separator'
+import { getCurrentDateInfo } from '@/utils/get-current-date-info'
 
 import CardImage from '../../assets/cardImage.jpeg'
+import { Header } from '../../components/app/header'
 import { Details } from './details'
-import { Header } from './header'
 
 export function Home() {
+  const { day, fullMonth, year } = getCurrentDateInfo()
+
   return (
     <div className="flex flex-col">
       <Header />
@@ -12,11 +15,11 @@ export function Home() {
       <h1 className="ml-14 mt-10 flex flex-col gap-3 text-3xl tracking-tight text-background lg:ml-36">
         Eventos
         <Separator
-          className="w-[400px] bg-muted-foreground sm:w-[550px] md:w-[48rem] lg:w-[64rem] "
+          className="w-[25rem] bg-muted-foreground sm:w-[550px] md:w-[48rem] lg:w-[64rem] "
           orientation="horizontal"
         />
         <p className="text-xs italic text-muted-foreground">
-          Hoje, 23 de Março de 2024
+          Hoje, {day} de {fullMonth} de {year}
         </p>
       </h1>
 
