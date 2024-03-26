@@ -1,15 +1,15 @@
-import { getHomeData } from '@/api/get-home-events'
+import { Info } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
 import { Separator } from '@/components/ui/separator'
+import { useGetHomeQuery } from '@/graphql/generated'
+import { formatedDate } from '@/utils/formatedDate'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
 
-import CardImage from '../../assets/cardImage.jpeg'
 import { Header } from '../../components/app/header'
-import { Details } from './details'
 
 export function Home() {
-  const response = getHomeData()
-
-  console.log(response)
+  const { data } = useGetHomeQuery()
 
   const { day, fullMonth, year } = getCurrentDateInfo()
 
@@ -29,22 +29,39 @@ export function Home() {
       </h1>
 
       <div className="mx-auto mt-12 grid w-80 place-items-center sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
-        {Array.from({ length: 1 }, (_, i) => {
+        {data?.event.map((event) => {
           return (
-            <div key={i} className="mb-10 flex flex-col gap-2">
+            <div key={event.slug} className="mb-10 flex flex-col gap-2">
               <img
-                src={CardImage}
+                src={event.card.url}
                 alt="Card Image"
-                className="h-96 w-full transform cursor-pointer border shadow-lg transition duration-500 ease-in-out hover:scale-105"
+                className="h-96 w-full transform cursor-pointer border shadow-lg transition duration-500 ease-in-out hover:scale-95"
               />
 
               <strong className="text-base font-extrabold uppercase">
-                26 de Março de 2024
+                {formatedDate(event.dateEvent[0])}
+                <p className="mx-2 inline-block lowercase">à</p>
+                {formatedDate(event.dateEvent[1])}
               </strong>
 
               <Separator orientation="horizontal" />
 
-              <Details />
+              <div className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">{event.city}</span>
+                  <Separator orientation="vertical" className="h-5" />
+                  <Link
+                    to={`http://localhost:5173/${event.slug}`}
+                    className="flex cursor-pointer items-center gap-1 text-sm font-medium text-rose-700 hover:text-rose-900"
+                  >
+                    <Info className="h-4 w-4" />
+                    Mais detalhes
+                  </Link>
+                </div>
+                <p className="text-sm font-semibold tracking-tight">
+                  Tema: {event.theme}
+                </p>
+              </div>
             </div>
           )
         })}

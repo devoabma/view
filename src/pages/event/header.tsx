@@ -1,18 +1,28 @@
 import { ClipboardPenLine } from 'lucide-react'
+import { useParams } from 'react-router-dom'
 
 import { ButtonShare } from '@/components/app/button-share'
 import { Button } from '@/components/ui/button'
+import { useGetEventBySlugQuery } from '@/graphql/generated'
 
 import Logo from '../../assets/logo-oabma.png'
 
 export function Header() {
+  const { slug } = useParams<{ slug: string }>()
+
+  const { data } = useGetEventBySlugQuery({
+    variables: {
+      slug,
+    },
+  })
+
   return (
     <>
       <div className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12 bg-foreground" />
       <div className="flex items-center justify-between px-4 pt-4 md:px-7">
         <img src={Logo} className="w-26 h-14" alt="OAB Seccional Maranhão" />
         <div className="ml-auto flex items-center gap-4">
-          <ButtonShare url="http://192.168.89.111:5173/" />
+          <ButtonShare url={`http://localhost:5173/${data?.events?.slug}`} />
 
           <Button
             variant="outline"

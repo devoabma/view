@@ -1,0 +1,15 @@
+query getHome {
+  event {
+    slug
+    title
+    theme
+    dateEvent
+    city
+    card {
+      url
+    }
+    imagesCard {
+      url
+    }
+  }
+}

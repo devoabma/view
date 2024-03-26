@@ -9,7 +9,11 @@ import { Popover, PopoverTrigger } from '@/components/ui/popover'
 import Logo from '../../assets/logo-oabma.png'
 import { Menu } from './menu'
 
-export function Header() {
+interface LinkForSend {
+  send?: string | null
+}
+
+export function Header({ send }: LinkForSend) {
   const [nav, setNav] = useState(false)
 
   function handleNav() {
@@ -53,7 +57,7 @@ export function Header() {
             </Link>
           </div>
 
-          <ButtonShare url="https://pje-oabma.vercel.app">
+          <ButtonShare url={`http://localhost:5173/${send}`}>
             <span className="md:text-base">Compartilhe</span>
           </ButtonShare>
         </div>

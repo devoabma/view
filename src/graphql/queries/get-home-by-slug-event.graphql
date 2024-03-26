@@ -1,0 +1,15 @@
+query GetEventBySlug($slug: String) {
+  events(where: {slug: $slug}) {
+    slug
+    title
+    theme
+    dateEvent
+    city
+    card {
+      url
+    }
+    imagesCard {
+      url
+    }
+  }
+}
