@@ -1,3 +1,4 @@
+import { getHomeData } from '@/api/get-home-events'
 import { Separator } from '@/components/ui/separator'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
 
@@ -6,6 +7,10 @@ import { Header } from '../../components/app/header'
 import { Details } from './details'
 
 export function Home() {
+  const response = getHomeData()
+
+  console.log(response)
+
   const { day, fullMonth, year } = getCurrentDateInfo()
 
   return (
@@ -24,7 +29,7 @@ export function Home() {
       </h1>
 
       <div className="mx-auto mt-12 grid w-80 place-items-center sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
-        {Array.from({ length: 5 }, (_, i) => {
+        {Array.from({ length: 1 }, (_, i) => {
           return (
             <div key={i} className="mb-10 flex flex-col gap-2">
               <img
