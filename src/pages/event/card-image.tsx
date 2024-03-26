@@ -1,16 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { GetEventBySlugQuery } from '@/graphql/generated'
 
-import { useGetEventBySlugQuery } from '@/graphql/generated'
+interface CardImagesProps {
+  data: GetEventBySlugQuery
+}
 
-export function CardImages() {
-  const { slug } = useParams<{ slug: string }>()
-
-  const { data } = useGetEventBySlugQuery({
-    variables: {
-      slug,
-    },
-  })
-
+export function CardImages({ data }: CardImagesProps) {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 pb-10">
       <img
@@ -18,10 +12,10 @@ export function CardImages() {
         className="w-96 shadow-custom lg:w-[500px]"
         alt=""
       />
-      {data?.events?.imagesCard.map((card) => {
+      {data?.events?.imagesCard.map((card, i) => {
         return (
           <img
-            key={card.__typename}
+            key={i}
             src={card.url}
             className="w-96 shadow-custom lg:w-[500px]"
             alt="Imagem do Card"

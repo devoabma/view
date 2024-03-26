@@ -17,9 +17,9 @@ export function Event() {
 
   return (
     <>
-      <Header send={data?.events?.slug} />
-      <ContentMain />
-      <CardImages />
+      <Header send={slug} />
+      <ContentMain data={data!} />
+      <CardImages data={data!} />
     </>
   )
 }

@@ -1,16 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { GetEventBySlugQuery } from '@/graphql/generated'
 
-import { useGetEventBySlugQuery } from '@/graphql/generated'
+interface ContentMainProps {
+  data: GetEventBySlugQuery
+}
 
-export function ContentMain() {
-  const { slug } = useParams<{ slug: string }>()
-
-  const { data } = useGetEventBySlugQuery({
-    variables: {
-      slug,
-    },
-  })
-
+export function ContentMain({ data }: ContentMainProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-1 py-12 ">
       <strong className="m-auto font-bold text-background lg:text-2xl">
