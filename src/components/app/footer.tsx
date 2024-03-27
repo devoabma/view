@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer
-      className={`flex min-h-16 flex-col items-center justify-center bg-foreground py-2 text-background`}
+      className={`flex min-h-16 flex-col items-center justify-center bg-sky-900 py-2 text-background`}
     >
       <div className="flex items-center justify-center gap-2">
         <Link to="https://www.facebook.com/OABMA/?locale=pt_BR" target="_blank">

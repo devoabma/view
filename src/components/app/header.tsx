@@ -1,15 +1,16 @@
-import { Certificate, House } from '@phosphor-icons/react'
+import { House, Question } from '@phosphor-icons/react'
 import { AlignJustify } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ButtonShare } from '@/components/app/button-share'
 import { Popover, PopoverTrigger } from '@/components/ui/popover'
+import { env } from '@/env'
 
 import Logo from '../../assets/logo-oabma.png'
 import { Menu } from './menu'
 
-interface LinkForSend {
+export interface LinkForSend {
   send?: string | null
 }
 
@@ -22,20 +23,20 @@ export function Header({ send }: LinkForSend) {
 
   return (
     <>
-      <div className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12 bg-foreground" />
+      <div className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12 bg-sky-900" />
 
-      <Popover>
+      <Popover open={nav} onOpenChange={setNav}>
         <PopoverTrigger asChild>
           <AlignJustify
             onClick={() => handleNav()}
             className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
           />
         </PopoverTrigger>
-        <Menu nav={nav} />
+        <Menu openPopover={nav} slug={send!} />
       </Popover>
 
       <div className="flex items-center gap-7 px-4 pt-4 md:px-7">
-        <Link to="https://www.oabma.org.br" target="_blank">
+        <Link to={env.VITE_OAB_URL} target="_blank">
           <img src={Logo} className="h-16" alt="OAB Seccional Maranhão" />
         </Link>
 
@@ -49,15 +50,15 @@ export function Header({ send }: LinkForSend) {
               Início
             </Link>
             <Link
-              to="#"
+              to="/contact"
               className="flex items-center gap-1 text-background transition-all hover:text-muted-foreground"
             >
-              <Certificate className="h-5 w-5" />
-              Emitir certificado
+              <Question className="h-5 w-5" />
+              Dúvidas e contatos
             </Link>
           </div>
 
-          <ButtonShare url={`http://localhost:5173/${send}`}>
+          <ButtonShare url={`${env.VITE_API_URL}`}>
             <span className="md:text-base">Compartilhe</span>
           </ButtonShare>
         </div>

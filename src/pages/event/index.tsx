@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 
+import { Loading } from '@/components/app/loading'
 import { useGetEventBySlugQuery } from '@/graphql/generated'
 
 import { Header } from '../../components/app/header'
@@ -17,9 +18,15 @@ export function Event() {
 
   return (
     <>
-      <Header send={slug} />
-      <ContentMain data={data!} />
-      <CardImages data={data!} />
+      {data ? (
+        <>
+          <Header send={data.events?.slug} />
+          <ContentMain data={data!} />
+          <CardImages data={data!} />
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   )
 }

@@ -11,5 +11,6 @@ query GetEventBySlug($slug: String) {
     imagesCard {
       url
     }
+    linkEvent
   }
 }

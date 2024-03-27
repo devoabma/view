@@ -11,5 +11,6 @@ query getHome {
     imagesCard {
       url
     }
+    linkEvent
   }
 }

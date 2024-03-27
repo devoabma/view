@@ -1,37 +1,39 @@
-import { Certificate, House, User } from '@phosphor-icons/react'
+import { House } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 
 import { PopoverContent } from '@/components/ui/popover'
+import { env } from '@/env'
+
+import { ButtonShare } from './button-share'
 
 interface MenuProps {
-  nav: boolean
+  openPopover: boolean
+  slug: string
 }
 
-export function Menu({ nav }: MenuProps) {
+export function Menu({ openPopover, slug }: MenuProps) {
   return (
     <PopoverContent>
-      {nav && (
-        <div className="z-10 flex flex-col items-end gap-3 bg-foreground py-3 pr-4">
-          <a
-            href="#"
+      {openPopover && (
+        <div className=" flex flex-col items-end gap-3 border-transparent bg-sky-900 py-3 pr-4 shadow-none">
+          <Link
+            to={env.VITE_API_URL}
             className="flex items-center gap-2 text-background hover:text-muted-foreground"
           >
             <House className="h-5 w-5" />
             Início
-          </a>
-          <a
-            href="#"
+          </Link>
+          {/* <Link
+            to="#"
             className="flex items-center  gap-2 text-background  hover:text-muted-foreground"
           >
-            <Certificate className="h-5 w-5" />
+            <Certificate className="hidden h-5 w-5" />
             Emitir certificado
-          </a>
-          <a
-            href="#"
-            className="flex items-center  gap-2 text-background  hover:text-muted-foreground"
-          >
-            <User className="h-5 w-5" />
-            Contato
-          </a>
+          </Link> */}
+
+          <ButtonShare url={`${env.VITE_API_URL}/${slug}`}>
+            <span className="md:text-base">Compartilhe</span>
+          </ButtonShare>
         </div>
       )}
     </PopoverContent>
