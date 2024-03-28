@@ -20,7 +20,7 @@ export function Event() {
     <>
       {data ? (
         <>
-          <Header send={data.events?.slug} />
+          <Header slug={data.events?.slug} />
           <ContentMain data={data!} />
           <CardImages data={data!} />
         </>

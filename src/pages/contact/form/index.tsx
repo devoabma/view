@@ -9,10 +9,10 @@ export function Form() {
       <form>
         <div className="relative mb-6">
           <div className="space-y-2">
-            <p className="text-sm font-medium">Nome completo</p>
+            <p className="text-sm font-medium">Nome</p>
             <Input
               type="text"
-              placeholder="Ex: João da Silva"
+              placeholder="Seu nome"
               className="placeholder:italic"
             />
           </div>
@@ -20,10 +20,10 @@ export function Form() {
 
         <div className="relative mb-6">
           <div className="space-y-2">
-            <p className="text-sm font-medium">Seu melhor e-mail</p>
+            <p className="text-sm font-medium">E-mail</p>
             <Input
               type="email"
-              placeholder="Ex: joao@example.com"
+              placeholder="Seu e-mail"
               className="placeholder:italic"
             />
           </div>

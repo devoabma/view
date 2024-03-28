@@ -11,10 +11,10 @@ import Logo from '../../assets/logo-oabma.png'
 import { Menu } from './menu'
 
 export interface LinkForSend {
-  send?: string | null
+  slug?: string | null
 }
 
-export function Header({ send }: LinkForSend) {
+export function Header({ slug }: LinkForSend) {
   const [nav, setNav] = useState(false)
 
   function handleNav() {
@@ -32,7 +32,7 @@ export function Header({ send }: LinkForSend) {
             className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
           />
         </PopoverTrigger>
-        <Menu openPopover={nav} slug={send!} />
+        <Menu openPopover={nav} slug={slug!} />
       </Popover>
 
       <div className="flex items-center gap-7 px-4 pt-4 md:px-7">
@@ -58,7 +58,9 @@ export function Header({ send }: LinkForSend) {
             </Link>
           </div>
 
-          <ButtonShare url={`${env.VITE_API_URL}`}>
+          <ButtonShare
+            url={slug ? `${env.VITE_API_URL}/${slug}` : `${env.VITE_API_URL}`}
+          >
             <span className="md:text-base">Compartilhe</span>
           </ButtonShare>
         </div>

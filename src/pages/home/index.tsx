@@ -27,7 +27,7 @@ export function Home() {
               className="w-[20rem] bg-muted-foreground md:w-[48rem] lg:w-[64rem] "
               orientation="horizontal"
             />
-            <p className="text-xs italic text-muted-foreground">
+            <p className="text-xs italic text-gray-300">
               Hoje, {day} de {fullMonth} de {year}
             </p>
           </h1>
