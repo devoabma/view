@@ -9,6 +9,7 @@ import { env } from '@/env'
 
 import Logo from '../../assets/logo-oabma.png'
 import { Menu } from './menu'
+import { NavLink } from './nav-item'
 
 export interface LinkForSend {
   slug?: string | null
@@ -41,21 +42,16 @@ export function Header({ slug }: LinkForSend) {
         </Link>
 
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
-          <div className="flex items-center justify-center sm:space-x-6 md:space-x-10">
-            <Link
-              to="/"
-              className="flex items-center gap-1 text-background transition-all hover:text-muted-foreground"
-            >
-              <House className="h-4 w-4" />
+          <div className="flex items-center justify-center md:space-x-5">
+            <NavLink to="/">
+              <House className="h-5 w-5" />
               Início
-            </Link>
-            <Link
-              to="/contact"
-              className="flex items-center gap-1 text-background transition-all hover:text-muted-foreground"
-            >
+            </NavLink>
+
+            <NavLink to="/contact">
               <Question className="h-5 w-5" />
               Dúvidas e contatos
-            </Link>
+            </NavLink>
           </div>
 
           <ButtonShare
