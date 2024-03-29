@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { Link, LinkProps, useLocation } from 'react-router-dom'
 
 export type NavLinkProps = LinkProps
@@ -14,7 +15,10 @@ export function NavLink(props: NavLinkProps) {
       />
 
       {pathname === props.to && (
-        <div className="absolute -bottom-2 left-0 right-0 h-0.5 rounded-lg bg-background" />
+        <motion.div
+          layoutId="activeNav"
+          className="absolute -bottom-2 left-0 right-0 h-0.5 rounded-lg bg-background"
+        />
       )}
     </div>
   )

@@ -9,8 +9,11 @@ export function Form() {
       <form>
         <div className="relative mb-6">
           <div className="space-y-2">
-            <p className="text-sm font-medium">Nome</p>
+            <label htmlFor="name" className="text-sm font-medium">
+              Nome
+            </label>
             <Input
+              id="name"
               type="text"
               placeholder="Seu nome"
               className="placeholder:italic"
@@ -20,7 +23,9 @@ export function Form() {
 
         <div className="relative mb-6">
           <div className="space-y-2">
-            <p className="text-sm font-medium">E-mail</p>
+            <label htmlFor="email" className="text-sm font-medium">
+              E-mail
+            </label>
             <Input
               type="email"
               placeholder="Seu e-mail"
@@ -39,14 +44,14 @@ export function Form() {
               format="(##) #####-####"
               autoComplete="tel-national"
               placeholder="(99) 99999-9999"
-              className=" block min-h-[auto] w-full rounded border-2  bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:border-sky-900 motion-reduce:transition-none"
+              className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
             />
           </div>
         </div>
 
         <div className="relative mb-6">
           <textarea
-            className=" block min-h-[auto] w-full rounded border-2  bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:border-sky-900 motion-reduce:transition-none"
+            className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
             id="message"
             rows={3}
             placeholder="Sua mensagem..."
