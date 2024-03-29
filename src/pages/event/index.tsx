@@ -4,6 +4,7 @@ import { Loading } from '@/components/app/loading'
 import { useGetEventBySlugQuery } from '@/graphql/generated'
 
 import { Header } from '../../components/app/header'
+import { NotFound } from '../404'
 import { CardImages } from './card-image'
 import { ContentMain } from './content-main'
 
@@ -21,8 +22,14 @@ export function Event() {
       {data ? (
         <>
           <Header slug={data.events?.slug} />
-          <ContentMain data={data!} />
-          <CardImages data={data!} />
+          {data.events?.slug ? (
+            <>
+              <ContentMain data={data!} />
+              <CardImages data={data!} />
+            </>
+          ) : (
+            <NotFound />
+          )}
         </>
       ) : (
         <Loading />
