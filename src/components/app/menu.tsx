@@ -17,22 +17,24 @@ export function Menu({ openPopover, slug }: MenuProps) {
       {openPopover && (
         <div className=" flex flex-col items-end gap-3 border-transparent bg-sky-900 py-3 pr-4 shadow-none">
           <Link
-            to={env.VITE_API_URL}
-            className="flex items-center gap-2 text-background hover:text-muted-foreground"
+            to="/"
+            className="flex items-center gap-2 font-semibold text-background hover:text-muted-foreground"
           >
             <House className="h-5 w-5" />
             Início
           </Link>
 
           <ButtonShare
-            url={slug ? `${env.VITE_API_URL}/${slug}` : `${env.VITE_API_URL}`}
+            url={
+              slug ? `${env.VITE_API_URL}/event/${slug}` : `${env.VITE_API_URL}`
+            }
           >
-            <span className="md:text-base">Compartilhe</span>
+            <span className="font-semibold md:text-base">Compartilhe</span>
           </ButtonShare>
 
           <Link
             to="/contact"
-            className="flex items-center gap-1 text-background transition-all hover:text-muted-foreground"
+            className="flex items-center gap-1 font-semibold text-background transition-all hover:text-muted-foreground"
           >
             <Question className="h-5 w-5" />
             Dúvidas e contatos

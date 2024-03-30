@@ -1,4 +1,5 @@
 import { House, Question } from '@phosphor-icons/react'
+import { motion } from 'framer-motion'
 import { AlignJustify } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -36,13 +37,19 @@ export function Header({ slug }: HeaderProps) {
         <Menu openPopover={nav} slug={slug!} />
       </Popover>
 
-      <div className="flex items-center gap-7 px-4 pt-4 md:px-7">
+      <motion.div
+        className="flex items-center gap-7 px-4 pt-4 md:px-7"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.9 }}
+      >
         <Link to={env.VITE_OAB_URL} target="_blank">
           <img src={Logo} className="h-16" alt="OAB Seccional Maranhão" />
         </Link>
 
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
-          <div className="flex items-center justify-center md:space-x-5">
+          <div className="flex  items-center justify-center md:space-x-5">
             <NavLink to="/">
               <House className="h-5 w-5" />
               Início
@@ -62,7 +69,7 @@ export function Header({ slug }: HeaderProps) {
             <span className="font-semibold md:text-base">Compartilhe</span>
           </ButtonShare>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }
