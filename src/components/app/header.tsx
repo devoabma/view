@@ -11,11 +11,11 @@ import Logo from '../../assets/logo-oabma.png'
 import { Menu } from './menu'
 import { NavLink } from './nav-item'
 
-export interface LinkForSend {
+interface HeaderProps {
   slug?: string | null
 }
 
-export function Header({ slug }: LinkForSend) {
+export function Header({ slug }: HeaderProps) {
   const [nav, setNav] = useState(false)
 
   function handleNav() {
@@ -55,9 +55,11 @@ export function Header({ slug }: LinkForSend) {
           </div>
 
           <ButtonShare
-            url={slug ? `${env.VITE_API_URL}/${slug}` : `${env.VITE_API_URL}`}
+            url={
+              slug ? `${env.VITE_API_URL}/event/${slug}` : `${env.VITE_API_URL}`
+            }
           >
-            <span className="md:text-base">Compartilhe</span>
+            <span className="font-semibold md:text-base">Compartilhe</span>
           </ButtonShare>
         </div>
       </div>

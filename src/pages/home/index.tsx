@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { Loading } from '@/components/app/loading'
 import { Separator } from '@/components/ui/separator'
-import { env } from '@/env'
 import { useGetHomeQuery } from '@/graphql/generated'
 import { formatedDate } from '@/utils/formated-date'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
-
-import { Header } from '../../components/app/header'
 
 export function Home() {
   const { data } = useGetHomeQuery()
@@ -19,8 +16,6 @@ export function Home() {
     <>
       {data ? (
         <div className="flex flex-col">
-          <Header />
-
           <h1 className="ml-14 mt-10 flex flex-col gap-3 text-3xl tracking-tight text-background lg:ml-36">
             Eventos
             <Separator
@@ -54,7 +49,7 @@ export function Home() {
 
                   <strong className="text-base font-extrabold uppercase">
                     {formatedDate(event.dateEvent[0])}
-                    <p className="mx-2 inline-block lowercase">à</p>
+                    <p className="mx-2 inline-block lowercase">a</p>
                     {formatedDate(event.dateEvent[1])}
                   </strong>
 
@@ -67,7 +62,7 @@ export function Home() {
                       </span>
                       <Separator orientation="vertical" className="h-5" />
                       <Link
-                        to={`${env.VITE_API_URL}/${event.slug}`}
+                        to={`/event/${event.slug}`}
                         className="flex cursor-pointer items-center gap-1 text-sm font-semibold text-rose-700 hover:text-rose-900"
                       >
                         <Info className="h-5 w-5 font-semibold" />

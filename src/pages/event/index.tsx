@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { Loading } from '@/components/app/loading'
 import { useGetEventBySlugQuery } from '@/graphql/generated'
 
-import { Header } from '../../components/app/header'
 import { NotFound } from '../404'
 import { CardImages } from './card-image'
 import { ContentMain } from './content-main'
@@ -21,7 +20,6 @@ export function Event() {
     <>
       {data ? (
         <>
-          <Header slug={data.events?.slug} />
           {data.events?.slug ? (
             <>
               <ContentMain data={data!} />

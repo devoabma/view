@@ -4,9 +4,9 @@ import { NavLink } from '@/components/app/nav-item'
 
 export function NotFound() {
   return (
-    <div className="mt-32 flex items-center justify-center">
+    <div className="flex flex-1 items-center justify-center">
       <div className="text-center">
-        <h1 className="mb-10 text-7xl font-bold text-background">404</h1>
+        <h1 className="mb-10 text-7xl font-bold text-sky-900">404</h1>
         <div className="mb-10 animate-bounce">
           <svg
             className="mx-auto h-16 w-16 text-sky-900"
@@ -26,7 +26,7 @@ export function NotFound() {
           Página não encontrada
         </strong>
         <p className="mt-4 flex items-center gap-1 text-muted-foreground">
-          Vamos levar você de volta para
+          Vamos levar você de volta para o
           <NavLink
             to="/"
             className="flex items-center gap-1 font-extrabold text-rose-800 hover:border-b-2 hover:border-b-rose-800"
