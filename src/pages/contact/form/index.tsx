@@ -1,11 +1,18 @@
 import { WhatsappLogo } from '@phosphor-icons/react'
+import { motion } from 'framer-motion'
 import { PatternFormat } from 'react-number-format'
 
 import { Input } from '@/components/ui/input'
 
 export function Form() {
   return (
-    <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
+    <motion.div
+      className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.9 }}
+    >
       <form>
         <div className="relative mb-6">
           <div className="space-y-2">
@@ -65,6 +72,6 @@ export function Form() {
           Enviar mensagem
         </button>
       </form>
-    </div>
+    </motion.div>
   )
 }
