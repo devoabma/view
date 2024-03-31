@@ -37,7 +37,7 @@ export function Home() {
           <div className="mx-auto mt-12 grid w-80 place-items-center sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
             {data.event.map((event) => {
               return (
-                <div key={event.slug} className="mb-10 flex flex-col gap-2 ">
+                <div key={event.slug} className="mb-10 flex flex-col gap-2">
                   <motion.div
                     initial={{ opacity: 0, y: 200, scale: 0.5 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -66,17 +66,17 @@ export function Home() {
                     initial={{ opacity: 0, y: -100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -100 }}
-                    transition={{ duration: 0.9, delay: 0.5 }}
+                    transition={{ duration: 0.5 }}
                   >
-                    <strong className="text-base font-extrabold uppercase">
-                      {formatedDate(event.dateEvent[0])}
-                      <p className="mx-2 inline-block lowercase">a</p>
-                      {formatedDate(event.dateEvent[1])}
-                    </strong>
+                    <div className="space-y-2 md:h-5">
+                      <strong className="mb-2 text-base font-extrabold uppercase">
+                        {formatedDate(event.dateEvent[0])}
+                        <p className="mx-2 inline-block lowercase">a</p>
+                        {formatedDate(event.dateEvent[1])}
+                      </strong>
 
-                    <Separator orientation="horizontal" />
+                      <Separator orientation="horizontal" />
 
-                    <div className="space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-muted-foreground">
                           {event.city}
