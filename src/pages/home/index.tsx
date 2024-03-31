@@ -22,7 +22,7 @@ export function Home() {
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             Eventos
             <Separator
@@ -42,7 +42,7 @@ export function Home() {
                     initial={{ opacity: 0, y: 200, scale: 0.5 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 200, scale: 0.5 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.9 }}
                     className="origin-center"
                   >
                     <Link to={event.linkEvent!} target="_blank">
@@ -66,7 +66,7 @@ export function Home() {
                     initial={{ opacity: 0, y: -100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -100 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.9, delay: 0.5 }}
                   >
                     <div className="space-y-2 md:h-5">
                       <strong className="mb-2 text-base font-extrabold uppercase">
