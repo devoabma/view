@@ -48,7 +48,7 @@ export function Form() {
 
       reset()
 
-      toast.success('Sua dúvida foi enviada com sucesso.')
+      toast.success('Sua mensagem foi enviada com sucesso.')
     } catch {
       toast.error('Houve um erro na solicitação, tente novamente!')
     }
