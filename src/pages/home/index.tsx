@@ -34,7 +34,7 @@ export function Home() {
             </p>
           </motion.h1>
 
-          <div className="mx-auto mt-12 grid w-80 place-items-center sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
+          <div className="mx-auto mt-16 grid min-h-screen w-80 place-items-start sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
             {data.event.map((event) => {
               return (
                 <div key={event.slug} className="mb-10 flex flex-col gap-2">
@@ -50,7 +50,7 @@ export function Home() {
                         <img
                           src={event.card.url}
                           alt="Card Image"
-                          className="h-96 w-full transform cursor-pointer border shadow-lg"
+                          className="h-96 w-full transform cursor-pointer shadow-custom"
                         />
                         <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 bg-opacity-80 py-1 opacity-0 transition duration-300 ease-in-out  group-hover:opacity-100">
                           <p className="flex items-center gap-2 text-center font-semibold text-white">
@@ -68,7 +68,7 @@ export function Home() {
                     exit={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.9, delay: 0.5 }}
                   >
-                    <div className="space-y-2 md:h-5">
+                    <div className="mt-3 space-y-2 md:h-5">
                       <strong className="mb-2 text-base font-extrabold uppercase">
                         {formatedDate(event.dateEvent[0])}
                         <p className="mx-2 inline-block lowercase">a</p>

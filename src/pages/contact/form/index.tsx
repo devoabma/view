@@ -1,10 +1,59 @@
-import { WhatsappLogo } from '@phosphor-icons/react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Spinner, WhatsappLogo } from '@phosphor-icons/react'
+import { useMutation } from '@tanstack/react-query'
 import { motion } from 'framer-motion'
+import { Controller, useForm } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
+import { toast } from 'sonner'
+import { string, z } from 'zod'
 
+import { registerDoubt } from '@/api/register-doubt'
 import { Input } from '@/components/ui/input'
 
+const formSchema = z.object({
+  name: string().min(3),
+  email: string().email(),
+  whatsapp: string().min(11),
+  message: string().min(3),
+})
+
+type FormType = z.infer<typeof formSchema>
+
 export function Form() {
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { isSubmitting, errors },
+    reset,
+  } = useForm<FormType>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      whatsapp: '',
+    },
+  })
+
+  const { mutateAsync: registerDoubtFn } = useMutation({
+    mutationFn: registerDoubt,
+  })
+
+  async function handleSendFormData(data: FormType) {
+    try {
+      await registerDoubtFn({
+        name: data.name,
+        email: data.email,
+        whatsapp: data.whatsapp,
+        message: data.message,
+      })
+
+      reset()
+
+      toast.success('Sua dúvida foi enviada com sucesso.')
+    } catch {
+      toast.error('Houve um erro na solicitação, tente novamente!')
+    }
+  }
+
   return (
     <motion.div
       className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
@@ -13,7 +62,7 @@ export function Form() {
       exit={{ opacity: 0, x: -100 }}
       transition={{ duration: 0.9 }}
     >
-      <form>
+      <form onSubmit={handleSubmit(handleSendFormData)}>
         <div className="relative mb-6">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium">
@@ -23,8 +72,14 @@ export function Form() {
               id="name"
               type="text"
               placeholder="Seu nome"
+              {...register('name')}
               className="placeholder:italic"
             />
+            {errors.name && (
+              <span className="text-sm font-semibold text-red-700">
+                O campo nome é obrigatório.
+              </span>
+            )}
           </div>
         </div>
 
@@ -36,23 +91,50 @@ export function Form() {
             <Input
               type="email"
               placeholder="Seu e-mail"
+              {...register('email')}
               className="placeholder:italic"
             />
+            {errors.email && (
+              <span className="text-sm font-semibold text-red-700">
+                O campo e-mail é obrigatório.
+              </span>
+            )}
           </div>
         </div>
 
         <div className="relative mb-6">
           <div className="space-y-2">
-            <p className="flex items-center gap-1 text-sm font-medium">
+            <label
+              htmlFor="tel"
+              className="flex items-center gap-1 text-sm font-medium"
+            >
               <WhatsappLogo className="h-5 w-5" />
               WhatsApp
-            </p>
-            <PatternFormat
-              format="(##) #####-####"
-              autoComplete="tel-national"
-              placeholder="(99) 99999-9999"
-              className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
+            </label>
+
+            <Controller
+              control={control}
+              name="whatsapp"
+              render={({ field: { onChange, name, value } }) => {
+                return (
+                  <PatternFormat
+                    format="(##) #####-####"
+                    autoComplete="tel-national"
+                    placeholder="(99) 99999-9999"
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    defaultValue=""
+                    className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
+                  />
+                )
+              }}
             />
+            {errors.whatsapp && (
+              <span className="text-sm font-semibold text-red-700">
+                O campo whatsapp é obrigatório.
+              </span>
+            )}
           </div>
         </div>
 
@@ -61,15 +143,26 @@ export function Form() {
             className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
             id="message"
             rows={3}
+            {...register('message')}
             placeholder="Sua mensagem..."
           />
+          {errors.message && (
+            <span className="text-sm font-semibold text-red-700">
+              O campo de messagem é obrigatório.
+            </span>
+          )}
         </div>
 
         <button
-          type="button"
-          className="mb-6 inline-block w-full rounded bg-rose-700 px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-rose-800 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-rose-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-rose-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
+          type="submit"
+          disabled={isSubmitting}
+          className="mb-6 flex w-full items-center justify-center rounded bg-rose-700 px-6 py-3.5 text-xs font-bold uppercase  text-gray-100 transition duration-150 ease-in-out hover:bg-rose-800 disabled:cursor-not-allowed disabled:hover:bg-rose-700 lg:mb-0"
         >
-          Enviar mensagem
+          {isSubmitting ? (
+            <Spinner className="h-5 w-5 animate-spin" />
+          ) : (
+            'Enviar'
+          )}
         </button>
       </form>
     </motion.div>

@@ -74,6 +74,9 @@ module.exports = {
       boxShadow: {
         custom: '0px 14px 28px rgba(0, 0, 0, 0.30)',
       },
+      backgroundImage: {
+        wave: "url('./src/assets/wave.svg')",
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer
-      className={`flex min-h-16 flex-col items-center justify-center bg-sky-900 py-2 text-background`}
+      className={`bg-wave flex min-h-16 flex-col items-center justify-center py-2 text-background`}
     >
       <div className="flex items-center justify-center gap-2">
         <Link to="https://www.facebook.com/OABMA/?locale=pt_BR" target="_blank">
@@ -34,7 +34,7 @@ export function Footer() {
         </Link>
       </div>
       <span className="mt-1 text-xs">OAB Seccional do Maranhão</span>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-slate-400">
         &copy; {year} - Gerência de Tecnologia da Informação
       </p>
     </footer>

@@ -1,4 +1,4 @@
-import { House, Question } from '@phosphor-icons/react'
+import { House, Question, X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { AlignJustify } from 'lucide-react'
 import { useState } from 'react'
@@ -25,14 +25,21 @@ export function Header({ slug }: HeaderProps) {
 
   return (
     <>
-      <div className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12 bg-sky-900" />
+      <div className="bg-wave absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12" />
 
       <Popover open={nav} onOpenChange={setNav}>
         <PopoverTrigger asChild>
-          <AlignJustify
-            onClick={() => handleNav()}
-            className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
-          />
+          {!nav ? (
+            <AlignJustify
+              onClick={() => handleNav()}
+              className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
+            />
+          ) : (
+            <X
+              onClick={() => handleNav()}
+              className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
+            />
+          )}
         </PopoverTrigger>
         <Menu openPopover={nav} slug={slug!} />
       </Popover>
