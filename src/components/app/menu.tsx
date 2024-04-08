@@ -15,10 +15,10 @@ export function Menu({ openPopover, slug }: MenuProps) {
   return (
     <PopoverContent>
       {openPopover && (
-        <div className="z-10 flex flex-col items-end gap-3 rounded-sm border-transparent bg-sky-900 py-3 pr-4 shadow-none">
+        <div className="flex flex-col items-end gap-3 rounded-sm border bg-foreground/70 py-3 pr-4 shadow-none">
           <Link
             to="/"
-            className="flex items-center gap-2 font-semibold text-muted-foreground transition-colors hover:text-white"
+            className="flex items-center gap-2 font-semibold text-slate-300 transition-all hover:text-slate-50"
           >
             <House className="h-5 w-5" />
             Início
@@ -29,14 +29,14 @@ export function Menu({ openPopover, slug }: MenuProps) {
               slug ? `${env.VITE_API_URL}/event/${slug}` : `${env.VITE_API_URL}`
             }
           >
-            <span className="font-semibold text-muted-foreground transition-colors hover:text-white">
+            <span className="font-semibold text-slate-300 transition-all hover:text-slate-50">
               Compartilhe
             </span>
           </ButtonShare>
 
           <Link
             to="/contact"
-            className="flex items-center gap-1 font-semibold text-muted-foreground transition-colors hover:text-white"
+            className="flex items-center gap-1 font-semibold text-slate-300 transition-all hover:text-slate-50"
           >
             <Question className="h-5 w-5" />
             Dúvidas e contatos
