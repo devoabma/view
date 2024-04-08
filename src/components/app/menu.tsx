@@ -15,7 +15,7 @@ export function Menu({ openPopover, slug }: MenuProps) {
   return (
     <PopoverContent>
       {openPopover && (
-        <div className="flex flex-col items-end gap-3 rounded-sm border bg-foreground/70 py-3 pr-4 shadow-none">
+        <div className="flex flex-col items-end gap-3 rounded-sm border bg-sky-900 py-3 pr-4 shadow-none">
           <Link
             to="/"
             className="flex items-center gap-2 font-semibold text-slate-300 transition-all hover:text-slate-50"
