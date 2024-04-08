@@ -61,7 +61,7 @@ export function Header({ slug }: HeaderProps) {
         </Link>
 
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
-          <div className="flex  items-center justify-center md:space-x-5">
+          <div className="flex items-center justify-center md:space-x-5">
             <NavLink to="/">
               <House className="h-5 w-5" />
               Início

@@ -10,7 +10,7 @@ export function NavLink(props: NavLinkProps) {
     <div className="relative space-y-2">
       <Link
         data-current={pathname === props.to}
-        className="flex items-center gap-1 font-bold text-muted-foreground transition-all data-[current=true]:font-bold data-[current=true]:text-background"
+        className="flex items-center gap-1 font-bold text-slate-300 transition-all data-[current=true]:font-bold data-[current=true]:text-background"
         {...props}
       />
 
