@@ -7,7 +7,6 @@ const envSchema = z.object({
   VITE_OAB_URL: z.string().url(),
   VITE_ISSUANCE_CERTIFICATE: z.string().url(),
   VITE_GETFORM_URL: z.string().url(),
-  VITE_RESEND_KEY: z.string().min(1),
   // Transforma o valor booleano da ENV em uma string com o valor 'true'
   VITE_ENABLE_API_DELAY: z.string().transform((value) => value === 'true'),
 })
