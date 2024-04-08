@@ -9,6 +9,7 @@ import { Popover, PopoverTrigger } from '@/components/ui/popover'
 import { env } from '@/env'
 
 import Logo from '../../assets/logo-oabma.png'
+import Wave from '../../assets/wave.svg'
 import { Menu } from './menu'
 import { NavLink } from './nav-item'
 
@@ -25,7 +26,11 @@ export function Header({ slug }: HeaderProps) {
 
   return (
     <>
-      <div className="bg-wave absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12" />
+      <img
+        src={Wave}
+        alt="Wave"
+        className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12"
+      />
 
       <Popover open={nav} onOpenChange={setNav}>
         <PopoverTrigger asChild>
