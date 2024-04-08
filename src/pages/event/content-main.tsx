@@ -9,17 +9,17 @@ interface ContentMainProps {
 export function ContentMain({ data }: ContentMainProps) {
   return (
     <motion.div
-      className="flex flex-col items-center justify-center gap-1 py-12"
+      className="container flex flex-col flex-wrap items-center justify-center gap-1 py-12 text-center"
       initial={{ opacity: 0, y: -100 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -100 }}
       transition={{ duration: 0.9 }}
     >
-      <strong className="m-auto font-bold text-background lg:text-2xl">
+      <strong className="m-auto font-bold uppercase text-background lg:text-2xl">
         {data?.events?.title}
       </strong>
-      <span className="text-sm tracking-tight text-muted-foreground lg:text-lg">
-        TEMA: {data?.events?.theme}
+      <span className="text-sm tracking-tight text-gray-400 lg:text-lg">
+        Tema: {data?.events?.theme}
       </span>
     </motion.div>
   )
