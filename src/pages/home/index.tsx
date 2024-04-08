@@ -71,11 +71,9 @@ export function Home() {
                       exit={{ opacity: 0, y: -100 }}
                       transition={{ duration: 0.9, delay: 0.5 }}
                     >
-                      <div className="mt-3 space-y-2 md:h-5">
-                        <strong className="mb-2 text-base font-extrabold uppercase">
-                          {formatedDate(event.dateEvent[0])}
-                          <p className="mx-2 inline-block lowercase">a</p>
-                          {formatedDate(event.dateEvent[1])}
+                      <div className="mt-2 space-y-2 text-center md:h-5">
+                        <strong className="mb-2 font-extrabold">
+                          {event.dateEvent}
                         </strong>
 
                         <Separator orientation="horizontal" />
@@ -110,7 +108,7 @@ export function Home() {
                 alt="Sem eventos"
                 className="h-80 w-80 md:h-96 md:w-96 lg:h-[450px] lg:w-[450px]"
               />
-              <strong className="absolute bottom-4 flex animate-pulse items-center gap-2">
+              <strong className="absolute bottom-2 flex animate-pulse items-center gap-2 text-rose-700 transition-colors">
                 Sem eventos no momento
                 <CalendarX2 className="h-6 w-6" />
               </strong>
