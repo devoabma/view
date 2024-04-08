@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { Loading } from '@/components/app/loading'
 import { Separator } from '@/components/ui/separator'
 import { useGetHomeQuery } from '@/graphql/generated'
-import { formatedDate } from '@/utils/formated-date'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
 
 import NotEvent from '../../assets/not-event.svg'
@@ -72,7 +71,7 @@ export function Home() {
                       transition={{ duration: 0.9, delay: 0.5 }}
                     >
                       <div className="mt-2 space-y-2 text-center md:h-5">
-                        <strong className="mb-2 font-extrabold">
+                        <strong className="mb-2 font-extrabold uppercase">
                           {event.dateEvent}
                         </strong>
 
