@@ -1,15 +1,19 @@
-import { House, Question, X } from '@phosphor-icons/react'
+import { Certificate, House, Question, X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { AlignJustify } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ButtonShare } from '@/components/app/button-share'
-import { Popover, PopoverTrigger } from '@/components/ui/popover'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { env } from '@/env'
 
 import Logo from '../../assets/logo-oabma.png'
 import Wave from '../../assets/wave.svg'
+import { Button } from '../ui/button'
 import { Menu } from './menu'
 import { NavLink } from './nav-item'
 
@@ -18,10 +22,10 @@ interface HeaderProps {
 }
 
 export function Header({ slug }: HeaderProps) {
-  const [nav, setNav] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(false)
 
-  function handleNav() {
-    setNav(!nav)
+  function handleNavigation() {
+    setOpenDropdown(!openDropdown)
   }
 
   return (
@@ -32,22 +36,23 @@ export function Header({ slug }: HeaderProps) {
         className="absolute top-[-12.9rem] -z-10 h-[31.25rem] w-full -skew-y-12"
       />
 
-      <Popover open={nav} onOpenChange={setNav}>
-        <PopoverTrigger asChild>
-          {!nav ? (
-            <AlignJustify
-              onClick={() => handleNav()}
-              className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
-            />
-          ) : (
-            <X
-              onClick={() => handleNav()}
-              className="absolute right-4 top-7 z-[99] h-9 w-9 text-background md:hidden"
-            />
-          )}
-        </PopoverTrigger>
-        <Menu openPopover={nav} slug={slug!} />
-      </Popover>
+      <DropdownMenu open={openDropdown} onOpenChange={setOpenDropdown}>
+        <DropdownMenuTrigger asChild>
+          <Button
+            type="button"
+            onClick={handleNavigation}
+            className="absolute right-7 top-6 flex select-none items-center rounded-none bg-transparent p-0 text-gray-300 transition-colors hover:bg-transparent hover:text-white md:hidden"
+          >
+            {!openDropdown ? (
+              <AlignJustify className="h-9 w-9" />
+            ) : (
+              <X className="h-9 w-9" />
+            )}
+          </Button>
+        </DropdownMenuTrigger>
+
+        <Menu openDropdown={openDropdown} slug={slug!} />
+      </DropdownMenu>
 
       <motion.div
         className="flex items-center gap-7 px-4 pt-4 md:px-7"
@@ -61,7 +66,7 @@ export function Header({ slug }: HeaderProps) {
         </Link>
 
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
-          <div className="flex items-center justify-center md:space-x-5">
+          <div className="flex items-center justify-center hover:text-white md:space-x-5">
             <NavLink to="/">
               <House className="h-5 w-5" />
               Início
@@ -70,6 +75,11 @@ export function Header({ slug }: HeaderProps) {
             <NavLink to="/contact">
               <Question className="h-5 w-5" />
               Dúvidas e contatos
+            </NavLink>
+
+            <NavLink to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
+              <Certificate className="h-5 w-5" />
+              Emitir certificado
             </NavLink>
           </div>
 

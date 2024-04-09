@@ -75,7 +75,7 @@ module.exports = {
         custom: '0px 14px 28px rgba(0, 0, 0, 0.30)',
       },
       backgroundImage: {
-        wave: "url('./src/assets/wave.svg')",
+        wave: "url('src/assets/wave.svg')",
       },
     },
   },

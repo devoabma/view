@@ -25,9 +25,9 @@ export function Home() {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Eventos
+            <span className="font-extrabold tracking-tight">Eventos</span>
             <Separator
-              className="w-[20rem] bg-muted-foreground sm:w-[40rem] lg:w-[50rem] xl:w-[70rem] "
+              className="w-[20rem] bg-muted-foreground sm:w-[30rem] lg:w-[50rem] xl:w-[70rem]"
               orientation="horizontal"
             />
             <p className="text-xs italic text-gray-300">
@@ -36,7 +36,7 @@ export function Home() {
           </motion.h1>
 
           {data.event.length >= 1 ? (
-            <div className="mx-auto mt-16 grid h-svh w-80 place-items-start sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
+            <div className="mx-auto mt-16 grid min-h-screen w-80 flex-1 place-items-start sm:gap-x-10  md:w-[43.75rem] md:grid-cols-2 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5">
               {data.event.map((event) => {
                 return (
                   <div key={event.slug} className="mb-10 flex flex-col gap-2">
@@ -54,7 +54,7 @@ export function Home() {
                             alt="Card Image"
                             className="h-96 w-full transform cursor-pointer shadow-custom"
                           />
-                          <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 bg-opacity-80 py-1 opacity-0 transition duration-300 ease-in-out  group-hover:opacity-100">
+                          <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
                             <p className="flex items-center gap-2 text-center font-semibold text-white">
                               Inscreva-se
                               <MousePointerClick className="h-6 w-6" />
