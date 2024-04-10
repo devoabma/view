@@ -1,5 +1,5 @@
-import { Certificate, House, Question } from '@phosphor-icons/react'
-import { Share2 } from 'lucide-react'
+import { Certificate } from '@phosphor-icons/react'
+import { CalendarCheck, MessageCircleQuestion, Share2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
 
@@ -26,8 +26,8 @@ export function Menu({ openDropdown, slug }: MenuProps) {
         >
           <Link to="/">
             <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
-              <House className="mr-2 h-5 w-5" />
-              Início
+              <CalendarCheck className="mr-2 h-5 w-5" />
+              Eventos
             </DropdownMenuItem>
           </Link>
 
@@ -59,7 +59,7 @@ export function Menu({ openDropdown, slug }: MenuProps) {
 
           <Link to="/contact">
             <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
-              <Question className="mr-2 h-5 w-5" />
+              <MessageCircleQuestion className="mr-2 h-5 w-5" />
               Dúvidas e contatos
             </DropdownMenuItem>
           </Link>
