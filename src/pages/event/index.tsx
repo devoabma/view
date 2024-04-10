@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 
 import { Loading } from '@/components/app/loading'
@@ -18,6 +19,8 @@ export function Event() {
 
   return (
     <>
+      <Helmet title="Evento" />
+
       {data ? (
         <>
           {data.events?.slug ? (

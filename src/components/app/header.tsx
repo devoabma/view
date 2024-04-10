@@ -1,6 +1,10 @@
-import { Certificate, House, Question, X } from '@phosphor-icons/react'
+import { Certificate, X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
-import { AlignJustify } from 'lucide-react'
+import {
+  AlignJustify,
+  CalendarCheck,
+  MessageCircleQuestion,
+} from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -68,12 +72,12 @@ export function Header({ slug }: HeaderProps) {
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
           <div className="flex items-center justify-center hover:text-white md:space-x-5">
             <NavLink to="/">
-              <House className="h-5 w-5" />
-              Início
+              <CalendarCheck className="h-5 w-5" />
+              Eventos
             </NavLink>
 
             <NavLink to="/contact">
-              <Question className="h-5 w-5" />
+              <MessageCircleQuestion className="h-5 w-5" />
               Dúvidas e contatos
             </NavLink>
 

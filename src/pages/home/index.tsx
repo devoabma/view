@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { CalendarX2, Info, MousePointerClick } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 import { Loading } from '@/components/app/loading'
@@ -16,6 +17,8 @@ export function Home() {
 
   return (
     <>
+      <Helmet title="Eventos" />
+
       {data ? (
         <div className="flex flex-col">
           <motion.h1
@@ -25,7 +28,9 @@ export function Home() {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="font-extrabold tracking-tight">Eventos</span>
+            <span className="font-extrabold tracking-tight">
+              Eventos em cartaz
+            </span>
             <Separator
               className="w-[20rem] bg-muted-foreground sm:w-[30rem] lg:w-[50rem] xl:w-[70rem]"
               orientation="horizontal"
