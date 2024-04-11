@@ -22,9 +22,6 @@ export function App() {
           <Toaster richColors position="top-center" />
         </QueryClientProvider>
       </ApolloProvider>
-
-      <Analytics />
-      <SpeedInsights />
     </HelmetProvider>
   )
 }
