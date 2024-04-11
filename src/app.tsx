@@ -1,5 +1,7 @@
 import { ApolloProvider } from '@apollo/client'
 import { QueryClientProvider } from '@tanstack/react-query'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from 'react-router-dom'
 
@@ -12,7 +14,7 @@ export function App() {
   return (
     <HelmetProvider>
       <Helmet titleTemplate="%s | OAB-MA">
-        <link rel="canonical" href="https://eventos.oabma.org.br" />
+        <link rel="canonical" href="https://evento.oabma.com.br" />
       </Helmet>
       <ApolloProvider client={client}>
         <QueryClientProvider client={queryClient}>
@@ -20,6 +22,9 @@ export function App() {
           <Toaster richColors position="top-center" />
         </QueryClientProvider>
       </ApolloProvider>
+
+      <Analytics />
+      <SpeedInsights />
     </HelmetProvider>
   )
 }
