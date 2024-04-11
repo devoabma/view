@@ -73,7 +73,7 @@ export function Form() {
               type="text"
               placeholder="Seu nome"
               {...register('name')}
-              className="placeholder:italic"
+              className="border-slate-400/80 placeholder:italic"
             />
             {errors.name && (
               <span className="text-sm font-semibold text-red-700">
@@ -92,7 +92,7 @@ export function Form() {
               type="email"
               placeholder="Seu e-mail"
               {...register('email')}
-              className="placeholder:italic"
+              className="border-slate-400/80 placeholder:italic"
             />
             {errors.email && (
               <span className="text-sm font-semibold text-red-700">
@@ -125,7 +125,7 @@ export function Form() {
                     value={value}
                     onChange={onChange}
                     defaultValue=""
-                    className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
+                    className=" block min-h-[auto] w-full rounded border-2 border-slate-400/80 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
                   />
                 )
               }}
@@ -140,9 +140,9 @@ export function Form() {
 
         <div className="relative mb-6">
           <textarea
-            className=" block min-h-[auto] w-full rounded border-2 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
+            className="row block min-h-[auto] w-full rounded border-2 border-slate-400/80 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
             id="message"
-            rows={3}
+            rows={6}
             {...register('message')}
             placeholder="Sua mensagem..."
           />

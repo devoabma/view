@@ -5,6 +5,7 @@ interface InformationProps {
   title: string
   email: string
   phone: string
+  phone2?: string
   children: ReactNode
 }
 
@@ -12,6 +13,7 @@ export function Information({
   title,
   email,
   phone,
+  phone2,
   children,
 }: InformationProps) {
   return (
@@ -32,6 +34,7 @@ export function Information({
           <p className="mb-2 font-bold">{title}</p>
           <p className="text-muted-foreground">{email}</p>
           <p className="text-muted-foreground">{phone}</p>
+          <p className="text-muted-foreground">{phone2}</p>
         </div>
       </motion.div>
     </div>

@@ -18,19 +18,20 @@ export function Contact() {
               <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
                 <div className="flex flex-wrap">
                   <Information
+                    title="Central de Eventos"
+                    email="eventos@oabma.org.br"
+                    phone="(98) 99174-6928"
+                    phone2="(98) 99149-9863"
+                  >
+                    <DeviceMobile className="h-6 w-6 text-sky-800" />
+                  </Information>
+
+                  <Information
                     title="Escola Superior Advocacia"
                     email="esa@oabma.org.br"
                     phone="(98) 2107-5454"
                   >
                     <PhoneCall className="h-6 w-6 text-sky-800" />
-                  </Information>
-
-                  <Information
-                    title="Central de Eventos"
-                    email="eventos@oabma.org.br"
-                    phone="(98) 2107-5452"
-                  >
-                    <DeviceMobile className="h-6 w-6 text-sky-800" />
                   </Information>
 
                   <Information
