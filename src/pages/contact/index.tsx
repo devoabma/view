@@ -14,7 +14,6 @@ export function Contact() {
           <div className="-mt-[100px] block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px]">
             <div className="flex flex-wrap items-center">
               <Form />
-
               <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
                 <div className="flex flex-wrap">
                   <Information

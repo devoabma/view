@@ -63,7 +63,7 @@ export function Form() {
       transition={{ duration: 0.9 }}
     >
       <form onSubmit={handleSubmit(handleSendFormData)}>
-        <div className="relative mb-6">
+        <div className="mb-6">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium">
               Nome
@@ -71,9 +71,9 @@ export function Form() {
             <Input
               id="name"
               type="text"
-              placeholder="Seu nome"
+              placeholder="Seu nome completo"
               {...register('name')}
-              className="border-slate-400/80 placeholder:italic"
+              className="border-slate-400"
             />
             {errors.name && (
               <span className="text-sm font-semibold text-red-700">
@@ -83,16 +83,16 @@ export function Form() {
           </div>
         </div>
 
-        <div className="relative mb-6">
+        <div className="mb-6 ">
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
               E-mail
             </label>
             <Input
               type="email"
-              placeholder="Seu e-mail"
+              placeholder="Seu melhor e-mail"
               {...register('email')}
-              className="border-slate-400/80 placeholder:italic"
+              className="border-slate-400/80"
             />
             {errors.email && (
               <span className="text-sm font-semibold text-red-700">
@@ -102,7 +102,7 @@ export function Form() {
           </div>
         </div>
 
-        <div className="relative mb-6">
+        <div className="mb-6">
           <div className="space-y-2">
             <label
               htmlFor="tel"
@@ -138,13 +138,13 @@ export function Form() {
           </div>
         </div>
 
-        <div className="relative mb-6">
+        <div className="mb-6">
           <textarea
             className="row block min-h-[auto] w-full rounded border-2 border-slate-400/80 bg-transparent  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear placeholder:text-sm focus:border-sky-900 motion-reduce:transition-none"
             id="message"
             rows={6}
             {...register('message')}
-            placeholder="Sua mensagem..."
+            placeholder="Digite sua mensagem..."
           />
           {errors.message && (
             <span className="text-sm font-semibold text-red-700">
