@@ -65,7 +65,7 @@ export function Header({ slug }: HeaderProps) {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.9 }}
       >
-        <Link to={env.VITE_OAB_URL} target="_blank">
+        <Link to="/">
           <img src={Logo} className="h-16" alt="OAB Seccional Maranhão" />
         </Link>
 
