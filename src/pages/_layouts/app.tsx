@@ -1,5 +1,6 @@
 import { Outlet, useParams } from 'react-router-dom'
 
+import { BackToTop } from '@/components/app/back-to-top'
 import { Footer } from '@/components/app/footer'
 import { Header } from '@/components/app/header'
 import { useGetEventBySlugQuery } from '@/graphql/generated'
@@ -20,6 +21,8 @@ export function AppLayout() {
       <div className="flex flex-1 flex-col">
         <Outlet />
       </div>
+
+      <BackToTop />
 
       <Footer />
     </div>
