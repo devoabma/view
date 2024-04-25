@@ -90,7 +90,7 @@ export function Home() {
                           <Separator orientation="vertical" className="h-5" />
                           <Link
                             to={`/event/${event.slug}`}
-                            className="cursor-pointer text-sm font-extrabold text-rose-700 transition-colors hover:text-red-800"
+                            className="cursor-pointer text-sm font-bold text-rose-700 transition-colors hover:text-red-800"
                           >
                             <p className="flex items-center justify-center gap-1">
                               <Info
