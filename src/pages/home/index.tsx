@@ -1,3 +1,4 @@
+import { Info } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { CalendarX2, MousePointerClick, PlusCircle } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
@@ -89,11 +90,14 @@ export function Home() {
                           <Separator orientation="vertical" className="h-5" />
                           <Link
                             to={`/event/${event.slug}`}
-                            className="cursor-pointer rounded-sm bg-gradient-to-r from-rose-700 to-rose-800 px-1 py-1 text-xs font-normal text-white"
+                            className="cursor-pointer text-sm font-extrabold text-rose-700 transition-colors hover:text-red-800"
                           >
                             <p className="flex items-center justify-center gap-1">
-                              <PlusCircle className="h-4 w-4" />
-                              Mais Detalhes
+                              <Info
+                                className="h-5 w-5 font-bold"
+                                weight="bold"
+                              />
+                              Mais Informações
                             </p>
                           </Link>
                         </div>
