@@ -1,4 +1,4 @@
-import { Certificate } from '@phosphor-icons/react'
+import { Certificate, UsersThree } from '@phosphor-icons/react'
 import { CalendarCheck, MessageCircleQuestion, Share2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
@@ -33,6 +33,37 @@ export function Menu({ openDropdown, slug }: MenuProps) {
 
           <DropdownMenuSeparator className="bg-slate-500" />
 
+          <Link to="/contact">
+            <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
+              <MessageCircleQuestion className="mr-2 h-5 w-5" />
+              Dúvidas e contatos
+            </DropdownMenuItem>
+          </Link>
+
+          <DropdownMenuSeparator className="bg-slate-500" />
+
+          {slug && (
+            <>
+              <Link to={env.VITE_GOOGLE_FORM}>
+                <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
+                  <UsersThree className="mr-2 h-5 w-5" />
+                  Conexão Jovem
+                </DropdownMenuItem>
+              </Link>
+
+              <DropdownMenuSeparator className="bg-slate-500" />
+            </>
+          )}
+
+          <Link to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
+            <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
+              <Certificate className="mr-2 h-5 w-5" />
+              Emitir certificado
+            </DropdownMenuItem>
+          </Link>
+
+          <DropdownMenuSeparator className="bg-slate-500" />
+
           <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
             <Share2 className="mr-2 h-5 w-5" />
             <WhatsappShareButton
@@ -45,24 +76,6 @@ export function Menu({ openDropdown, slug }: MenuProps) {
               Compartilhe
             </WhatsappShareButton>
           </DropdownMenuItem>
-
-          <DropdownMenuSeparator className="bg-slate-500" />
-
-          <Link to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
-            <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
-              <Certificate className="mr-2 h-5 w-5" />
-              Emitir certificado
-            </DropdownMenuItem>
-          </Link>
-
-          <DropdownMenuSeparator className="bg-slate-500" />
-
-          <Link to="/contact">
-            <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
-              <MessageCircleQuestion className="mr-2 h-5 w-5" />
-              Dúvidas e contatos
-            </DropdownMenuItem>
-          </Link>
         </DropdownMenuContent>
       )}
     </>

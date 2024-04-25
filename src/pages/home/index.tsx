@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { CalendarX2, Info, MousePointerClick } from 'lucide-react'
+import { CalendarX2, MousePointerClick, PlusCircle } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
@@ -89,10 +89,12 @@ export function Home() {
                           <Separator orientation="vertical" className="h-5" />
                           <Link
                             to={`/event/${event.slug}`}
-                            className="flex cursor-pointer items-center gap-1 text-sm font-semibold text-rose-700 hover:text-rose-900"
+                            className="cursor-pointer rounded-sm bg-gradient-to-r from-rose-700 to-rose-800 px-1 py-1 text-xs font-normal text-white"
                           >
-                            <Info className="h-5 w-5 font-semibold" />
-                            Mais detalhes
+                            <p className="flex items-center justify-center gap-1">
+                              <PlusCircle className="h-4 w-4" />
+                              Mais Detalhes
+                            </p>
                           </Link>
                         </div>
                         <p className="text-sm font-semibold tracking-tight">

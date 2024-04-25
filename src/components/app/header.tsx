@@ -1,4 +1,4 @@
-import { Certificate, X } from '@phosphor-icons/react'
+import { Certificate, UsersThree, X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import {
   AlignJustify,
@@ -80,6 +80,13 @@ export function Header({ slug }: HeaderProps) {
               <MessageCircleQuestion className="h-5 w-5" />
               Dúvidas e contatos
             </NavLink>
+
+            {slug && (
+              <NavLink to={env.VITE_GOOGLE_FORM} target="_blank">
+                <UsersThree className="h-5 w-5" />
+                Conexão Jovem
+              </NavLink>
+            )}
 
             <NavLink to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
               <Certificate className="h-5 w-5" />
