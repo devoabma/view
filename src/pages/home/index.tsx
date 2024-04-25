@@ -1,6 +1,6 @@
 import { Info } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
-import { CalendarX2, MousePointerClick, PlusCircle } from 'lucide-react'
+import { CalendarX2, MousePointerClick } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 

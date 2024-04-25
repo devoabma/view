@@ -17,7 +17,7 @@ export function NotFoundApp() {
             <h1 className="mb-10 text-7xl font-bold text-gray-950">404</h1>
             <div className="mb-10 animate-bounce">
               <svg
-                className="mx-auto h-16 w-16 text-sky-900"
+                className="mx-auto h-16 w-16 text-gray-950"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
