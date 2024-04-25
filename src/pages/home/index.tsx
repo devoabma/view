@@ -58,7 +58,7 @@ export function Home() {
                           <img
                             src={event.card.url}
                             alt="Card Image"
-                            className="h-96 w-full transform cursor-pointer shadow-custom"
+                            className="h-96 w-full transform cursor-pointer object-cover shadow-custom"
                           />
                           <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
                             <p className="flex items-center gap-2 text-center font-semibold text-white">
@@ -83,7 +83,7 @@ export function Home() {
 
                         <Separator orientation="horizontal" />
 
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between gap-4">
                           <span className="text-muted-foreground">
                             {event.city}
                           </span>
@@ -101,9 +101,11 @@ export function Home() {
                             </p>
                           </Link>
                         </div>
-                        <p className="text-sm font-semibold tracking-tight">
-                          Tema: {event.theme}
-                        </p>
+                        {event.theme && (
+                          <p className="text-sm font-semibold tracking-tight">
+                            Tema: {event.theme}
+                          </p>
+                        )}
                       </div>
                     </motion.div>
                   </div>

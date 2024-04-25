@@ -987,7 +987,7 @@ export type Events = Entity & Node & {
   slug?: Maybe<Scalars['String']['output']>;
   /** System stage field */
   stage: Stage;
-  theme: Scalars['String']['output'];
+  theme?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
   /** The time the document was updated */
   updatedAt: Scalars['DateTime']['output'];
@@ -1084,7 +1084,7 @@ export type EventsCreateInput = {
   imagesCard?: InputMaybe<AssetCreateManyInlineInput>;
   linkEvent?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
-  theme: Scalars['String']['input'];
+  theme?: InputMaybe<Scalars['String']['input']>;
   title: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
@@ -3960,12 +3960,12 @@ export type GetEventBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetEventBySlugQuery = { __typename?: 'Query', events?: { __typename?: 'Events', slug?: string | null, title: string, theme: string, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> } | null };
+export type GetEventBySlugQuery = { __typename?: 'Query', events?: { __typename?: 'Events', slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> } | null };
 
 export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeQuery = { __typename?: 'Query', event: Array<{ __typename?: 'Events', slug?: string | null, title: string, theme: string, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> }> };
+export type GetHomeQuery = { __typename?: 'Query', event: Array<{ __typename?: 'Events', slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> }> };
 
 
 export const GetEventBySlugDocument = gql`

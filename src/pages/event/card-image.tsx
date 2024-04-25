@@ -9,7 +9,7 @@ interface CardImagesProps {
 export function CardImages({ data }: CardImagesProps) {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 pb-10">
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
@@ -20,7 +20,7 @@ export function CardImages({ data }: CardImagesProps) {
           className="w-96 shadow-custom lg:w-[450px]"
           alt=""
         />
-      </motion.div>
+      </motion.div> */}
 
       {data?.events?.imagesCard.map((card, i) => {
         return (
