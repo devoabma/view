@@ -26,10 +26,10 @@ interface HeaderProps {
   id?: string
 }
 
+export const ID_EVENT_VI_JOVEM_ADVOCACIA = 'clvff6yo50hkf08lqsu29nvt4'
+
 export function Header({ slug, id }: HeaderProps) {
   const [openDropdown, setOpenDropdown] = useState(false)
-
-  const ID_EVENT_VI_JOVEM_ADVOCACIA = 'clvff6yo50hkf08lqsu29nvt4'
 
   function handleNavigation() {
     setOpenDropdown(!openDropdown)
@@ -58,7 +58,7 @@ export function Header({ slug, id }: HeaderProps) {
           </Button>
         </DropdownMenuTrigger>
 
-        <Menu openDropdown={openDropdown} slug={slug!} />
+        <Menu openDropdown={openDropdown} slug={slug!} id={id} />
       </DropdownMenu>
 
       <motion.div

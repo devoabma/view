@@ -10,13 +10,15 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '../ui/dropdown-menu'
+import { ID_EVENT_VI_JOVEM_ADVOCACIA } from './header'
 
 interface MenuProps {
   openDropdown: boolean
   slug?: string
+  id?: string
 }
 
-export function Menu({ openDropdown, slug }: MenuProps) {
+export function Menu({ openDropdown, slug, id }: MenuProps) {
   return (
     <>
       {openDropdown && (
@@ -42,7 +44,7 @@ export function Menu({ openDropdown, slug }: MenuProps) {
 
           <DropdownMenuSeparator className="bg-slate-500" />
 
-          {slug && (
+          {id === ID_EVENT_VI_JOVEM_ADVOCACIA && (
             <>
               <Link to={env.VITE_GOOGLE_FORM}>
                 <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
