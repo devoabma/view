@@ -16,7 +16,7 @@ export function AppLayout() {
 
   return (
     <div className="flex min-h-screen flex-col antialiased">
-      <Header slug={data?.events?.slug} />
+      <Header slug={data?.events?.slug} id={data?.events?.id} />
 
       <div className="flex flex-1 flex-col">
         <Outlet />

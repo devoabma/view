@@ -3960,17 +3960,18 @@ export type GetEventBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetEventBySlugQuery = { __typename?: 'Query', events?: { __typename?: 'Events', slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> } | null };
+export type GetEventBySlugQuery = { __typename?: 'Query', events?: { __typename?: 'Events', id: string, slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> } | null };
 
 export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeQuery = { __typename?: 'Query', event: Array<{ __typename?: 'Events', slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> }> };
+export type GetHomeQuery = { __typename?: 'Query', event: Array<{ __typename?: 'Events', id: string, slug?: string | null, title: string, theme?: string | null, dateEvent: string, city: string, linkEvent?: string | null, card: { __typename?: 'Asset', url: string }, imagesCard: Array<{ __typename?: 'Asset', url: string }> }> };
 
 
 export const GetEventBySlugDocument = gql`
     query GetEventBySlug($slug: String) {
   events(where: {slug: $slug}) {
+    id
     slug
     title
     theme
@@ -4022,6 +4023,7 @@ export type GetEventBySlugQueryResult = Apollo.QueryResult<GetEventBySlugQuery, 
 export const GetHomeDocument = gql`
     query getHome {
   event {
+    id
     slug
     title
     theme

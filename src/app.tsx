@@ -12,7 +12,7 @@ export function App() {
   return (
     <HelmetProvider>
       <Helmet titleTemplate="%s | OAB-MA">
-        <link rel="canonical" href="https://evento.oabma.com.br" />
+        <link rel="canonical" href="https://eventos.oabma.org.br" />
       </Helmet>
       <ApolloProvider client={client}>
         <QueryClientProvider client={queryClient}>

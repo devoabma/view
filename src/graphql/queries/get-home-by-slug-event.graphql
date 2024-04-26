@@ -1,5 +1,6 @@
 query GetEventBySlug($slug: String) {
   events(where: {slug: $slug}) {
+    id
     slug
     title
     theme

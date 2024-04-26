@@ -1,5 +1,6 @@
 query getHome {
   event {
+    id
     slug
     title
     theme

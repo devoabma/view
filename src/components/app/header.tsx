@@ -23,10 +23,13 @@ import { NavLink } from './nav-item'
 
 interface HeaderProps {
   slug?: string | null
+  id?: string
 }
 
-export function Header({ slug }: HeaderProps) {
+export function Header({ slug, id }: HeaderProps) {
   const [openDropdown, setOpenDropdown] = useState(false)
+
+  const ID_EVENT_VI_JOVEM_ADVOCACIA = 'clvff6yo50hkf08lqsu29nvt4'
 
   function handleNavigation() {
     setOpenDropdown(!openDropdown)
@@ -81,7 +84,7 @@ export function Header({ slug }: HeaderProps) {
               Dúvidas e contatos
             </NavLink>
 
-            {slug && (
+            {id === ID_EVENT_VI_JOVEM_ADVOCACIA && (
               <NavLink to={env.VITE_GOOGLE_FORM} target="_blank">
                 <UsersThree className="h-5 w-5" />
                 Conexão Jovem
