@@ -7,7 +7,7 @@ export function Footer() {
   const { year } = getCurrentDateInfo()
 
   return (
-    <footer className="flex min-h-16 flex-col items-center justify-center bg-gradient-to-r from-sky-700 to-indigo-600 py-2 text-background">
+    <footer className="flex min-h-20 flex-col items-center justify-center bg-gradient-to-r from-sky-700 to-indigo-600 py-2 text-background">
       <div className="flex items-center justify-center gap-2">
         <Link to="https://www.facebook.com/OABMA/?locale=pt_BR" target="_blank">
           <FacebookLogo
