@@ -1,4 +1,4 @@
-import { Info } from '@phosphor-icons/react'
+// import { Info } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { CalendarX2, MousePointerClick } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
@@ -93,10 +93,10 @@ export function Home() {
                             className="cursor-pointer text-sm font-bold text-rose-700 transition-colors hover:text-red-800"
                           >
                             <p className="flex items-center justify-center gap-1">
-                              <Info
+                              {/* <Info
                                 className="h-5 w-5 font-bold"
                                 weight="bold"
-                              />
+                              /> */}
                               1º Dia - Programação
                             </p>
                           </Link>
