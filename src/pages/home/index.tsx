@@ -97,7 +97,7 @@ export function Home() {
                                 className="h-5 w-5 font-bold"
                                 weight="bold"
                               />
-                              Mais Informações
+                              Programação
                             </p>
                           </Link>
                         </div>
