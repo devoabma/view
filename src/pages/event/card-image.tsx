@@ -5,8 +5,8 @@ import { GetEventBySlugQuery } from '@/graphql/generated'
 interface CardImagesProps {
   data: GetEventBySlugQuery
 }
-
 export function CardImages({ data }: CardImagesProps) {
+  console.log(data.events?.imagesCard.length)
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 pb-10">
       {/* <motion.div
