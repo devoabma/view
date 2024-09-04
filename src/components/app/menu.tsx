@@ -1,4 +1,4 @@
-import { Certificate, UsersThree } from '@phosphor-icons/react'
+import { Info } from '@phosphor-icons/react'
 import { CalendarCheck, MessageCircleQuestion, Share2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
@@ -10,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '../ui/dropdown-menu'
-import { ID_EVENT_VI_JOVEM_ADVOCACIA } from './header'
 
 interface MenuProps {
   openDropdown: boolean
@@ -18,7 +17,7 @@ interface MenuProps {
   id?: string
 }
 
-export function Menu({ openDropdown, slug, id }: MenuProps) {
+export function Menu({ openDropdown, slug }: MenuProps) {
   return (
     <>
       {openDropdown && (
@@ -44,25 +43,21 @@ export function Menu({ openDropdown, slug, id }: MenuProps) {
 
           <DropdownMenuSeparator className="bg-slate-500" />
 
-          {id === ID_EVENT_VI_JOVEM_ADVOCACIA && (
-            <>
-              <Link to={env.VITE_GOOGLE_FORM}>
-                <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
-                  <UsersThree className="mr-2 h-5 w-5" />
-                  Conexão Jovem
-                </DropdownMenuItem>
-              </Link>
+          <Link to={env.VITE_INFO_PREV}>
+            <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
+              <Info className="mr-2 h-5 w-5" />
+              Programação no Site
+            </DropdownMenuItem>
+          </Link>
 
-              <DropdownMenuSeparator className="bg-slate-500" />
-            </>
-          )}
+          <DropdownMenuSeparator className="bg-slate-500" />
 
-          <Link to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
+          {/* <Link to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
             <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
               <Certificate className="mr-2 h-5 w-5" />
               Emitir certificado
             </DropdownMenuItem>
-          </Link>
+          </Link> */}
 
           <DropdownMenuSeparator className="bg-slate-500" />
 

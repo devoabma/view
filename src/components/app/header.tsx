@@ -1,4 +1,4 @@
-import { Certificate, UsersThree, X } from '@phosphor-icons/react'
+import { Info, X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import {
   AlignJustify,
@@ -26,7 +26,7 @@ interface HeaderProps {
   id?: string
 }
 
-export const ID_EVENT_VI_JOVEM_ADVOCACIA = 'clvff6yo50hkf08lqsu29nvt4'
+export const ID_EVENT_I_PREV = 'cm0not0x418be07k92iz9agpw'
 
 export function Header({ slug, id }: HeaderProps) {
   const [openDropdown, setOpenDropdown] = useState(false)
@@ -84,17 +84,15 @@ export function Header({ slug, id }: HeaderProps) {
               Dúvidas e contatos
             </NavLink>
 
-            {id === ID_EVENT_VI_JOVEM_ADVOCACIA && (
-              <NavLink to={env.VITE_GOOGLE_FORM} target="_blank">
-                <UsersThree className="h-5 w-5" />
-                Conexão Jovem
-              </NavLink>
-            )}
+            <NavLink to={env.VITE_INFO_PREV} target="_blank">
+              <Info className="h-5 w-5" />
+              Programação no Site
+            </NavLink>
 
-            <NavLink to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
+            {/* <NavLink to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
               <Certificate className="h-5 w-5" />
               Emitir certificado
-            </NavLink>
+            </NavLink> */}
           </div>
 
           <ButtonShare
