@@ -97,7 +97,7 @@ export function Home() {
                                 className="h-5 w-5 font-bold"
                                 weight="bold"
                               /> */}
-                              1º Dia - Programação
+                              2º Dia - Programação
                             </p>
                           </Link>
                         </div>
