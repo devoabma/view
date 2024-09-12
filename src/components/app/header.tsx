@@ -1,4 +1,4 @@
-import { Info, X } from '@phosphor-icons/react'
+import { X } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import {
   AlignJustify,
@@ -84,10 +84,10 @@ export function Header({ slug, id }: HeaderProps) {
               Dúvidas e contatos
             </NavLink>
 
-            <NavLink to={env.VITE_INFO_PREV} target="_blank">
+            {/* <NavLink to={env.VITE_INFO_PREV} target="_blank">
               <Info className="h-5 w-5" />
               Programação no Site
-            </NavLink>
+            </NavLink> */}
 
             {/* <NavLink to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
               <Certificate className="h-5 w-5" />

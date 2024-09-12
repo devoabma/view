@@ -1,4 +1,3 @@
-import { Info } from '@phosphor-icons/react'
 import { CalendarCheck, MessageCircleQuestion, Share2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { WhatsappShareButton } from 'react-share'
@@ -41,16 +40,16 @@ export function Menu({ openDropdown, slug }: MenuProps) {
             </DropdownMenuItem>
           </Link>
 
-          <DropdownMenuSeparator className="bg-slate-500" />
+          {/* <DropdownMenuSeparator className="bg-slate-500" /> */}
 
-          <Link to={env.VITE_INFO_PREV}>
+          {/* <Link to={env.VITE_INFO_PREV}>
             <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">
               <Info className="mr-2 h-5 w-5" />
-              Programação no Site
+              Emitir certificado
             </DropdownMenuItem>
           </Link>
 
-          <DropdownMenuSeparator className="bg-slate-500" />
+          <DropdownMenuSeparator className="bg-slate-500" /> */}
 
           {/* <Link to={env.VITE_ISSUANCE_CERTIFICATE} target="_blank">
             <DropdownMenuItem className="cursor-pointer hover:bg-slate-400/50 hover:text-white">

@@ -23,4 +23,3 @@ export function NavLink(props: NavLinkProps) {
     </div>
   )
 }
-// Ajustes
