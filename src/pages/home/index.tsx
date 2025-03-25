@@ -53,10 +53,12 @@ export function Home() {
                       transition={{ duration: 0.9 }}
                       className="origin-center"
                     >
+                      {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
                       <Link to={event.linkEvent!} target="_blank">
                         <div className="group relative transition duration-500 ease-in-out hover:scale-105">
                           <img
                             src={event.card.url}
+                            // biome-ignore lint/a11y/noRedundantAlt: <explanation>
                             alt="Card Image"
                             className="h-96 w-full transform cursor-pointer object-cover shadow-custom"
                           />
@@ -111,7 +113,6 @@ export function Home() {
                   </div>
                 )
               })}
-              <div></div>
             </div>
           ) : (
             <div className="container relative my-10 flex flex-col flex-wrap items-center justify-center gap-2">

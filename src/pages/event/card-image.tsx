@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import { GetEventBySlugQuery } from '@/graphql/generated'
+import type { GetEventBySlugQuery } from '@/graphql/generated'
 
 interface CardImagesProps {
   data: GetEventBySlugQuery
@@ -29,6 +29,7 @@ export function CardImages({ data }: CardImagesProps) {
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.9, delay: i * 0.1 }}
+            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             key={i}
           >
             <img

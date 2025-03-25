@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import { GetEventBySlugQuery } from '@/graphql/generated'
+import type { GetEventBySlugQuery } from '@/graphql/generated'
 
 interface ContentMainProps {
   data: GetEventBySlugQuery

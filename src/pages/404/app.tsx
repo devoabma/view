@@ -16,6 +16,7 @@ export function NotFoundApp() {
           <div className="text-center">
             <h1 className="mb-10 text-7xl font-bold text-gray-950">404</h1>
             <div className="mb-10 animate-bounce">
+              {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
               <svg
                 className="mx-auto h-16 w-16 text-gray-950"
                 fill="none"
@@ -27,7 +28,7 @@ export function NotFoundApp() {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                ></path>
+                />
               </svg>
             </div>
             <strong className="uppercase tracking-tight">

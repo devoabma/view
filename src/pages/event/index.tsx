@@ -25,7 +25,9 @@ export function Event() {
         <>
           {data.events?.slug ? (
             <>
+              {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
               <ContentMain data={data!} />
+              {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
               <CardImages data={data!} />
             </>
           ) : (

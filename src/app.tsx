@@ -11,7 +11,7 @@ import { router } from './routes'
 export function App() {
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s | OAB-MA">
+      <Helmet titleTemplate="%s OAB">
         <link rel="canonical" href="https://eventos.oabma.org.br" />
       </Helmet>
       <ApolloProvider client={client}>

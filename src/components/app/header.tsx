@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { env } from '@/env'
 
-import Logo from '../../assets/logo-oabma-event.png'
+import Logo from '../../assets/logo-oabma-white.png'
 import Wave from '../../assets/wave.svg'
 import { Button } from '../ui/button'
 import { Menu } from './menu'
@@ -58,6 +58,7 @@ export function Header({ slug, id }: HeaderProps) {
           </Button>
         </DropdownMenuTrigger>
 
+        {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
         <Menu openDropdown={openDropdown} slug={slug!} id={id} />
       </DropdownMenu>
 
@@ -71,6 +72,8 @@ export function Header({ slug, id }: HeaderProps) {
         <Link to="/">
           <img src={Logo} className="h-16" alt="OAB Seccional Maranhão" />
         </Link>
+
+        <div className="h-6 w-[1px] bg-white/50 max-sm:hidden" />
 
         <div className="flex flex-1 items-center justify-between gap-20 max-md:hidden">
           <div className="flex items-center justify-center hover:text-white md:space-x-5">
