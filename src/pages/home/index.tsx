@@ -54,14 +54,14 @@ export function Home() {
                     >
                       {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
                       <Link to={event.linkEvent!} target="_blank">
-                        <div className="group relative transition duration-500 ease-in-out hover:scale-105">
+                        <div className="group relative w-full transition duration-500 ease-in-out hover:scale-105">
                           <img
                             src={event.card.url}
                             // biome-ignore lint/a11y/noRedundantAlt: <explanation>
                             alt="Card Image"
-                            className="h-[420px] w-[276px] transform cursor-pointer object-cover shadow-custom"
+                            className="h-[420px] w-[300px] transform cursor-pointer object-cover shadow-custom"
                           />
-                          <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
+                          <div className="absolute bottom-0 max-sm:w-[300px] left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
                             <p className="flex items-center gap-2 text-center font-semibold text-white">
                               Inscreva-se
                               <MousePointerClick className="h-6 w-6" />
@@ -77,9 +77,9 @@ export function Home() {
                       exit={{ opacity: 0, y: -100 }}
                       transition={{ duration: 0.9, delay: 0.5 }}
                     >
-                      <div className="mt-2 space-y-2 text-center md:h-5">
+                      <div className="mt-2 space-y-2 w-full  text-center md:h-5">
                       {event.theme && (
-                          <strong className="text-sm font-extrabold tracking-tight">
+                          <strong className="text-sm w-full  font-extrabold tracking-tight">
                             {event.theme}
                           </strong>
                         )}
