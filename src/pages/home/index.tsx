@@ -60,7 +60,7 @@ export function Home() {
                             src={event.card.url}
                             // biome-ignore lint/a11y/noRedundantAlt: <explanation>
                             alt="Card Image"
-                            className="h-96 w-full transform cursor-pointer object-cover shadow-custom"
+                            className="h-[420px] w-[276px] transform cursor-pointer object-cover shadow-custom"
                           />
                           <div className="absolute bottom-0 left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
                             <p className="flex items-center gap-2 text-center font-semibold text-white">
@@ -79,18 +79,26 @@ export function Home() {
                       transition={{ duration: 0.9, delay: 0.5 }}
                     >
                       <div className="mt-2 space-y-2 text-center md:h-5">
-                        <strong className="mb-2 font-extrabold uppercase">
-                          {event.dateEvent}
-                        </strong>
+                      {event.theme && (
+                          <strong className="text-sm font-extrabold tracking-tight">
+                            {event.theme}
+                          </strong>
+                        )}
 
                         <Separator orientation="horizontal" />
 
-                        <div className="flex items-center justify-between gap-4">
+                        <p className="mb-2 font-semibold uppercase">
+                          {event.dateEvent}
+                        </p>
+
+
+                        <div className="flex items-center justify-center">
                           <span className="text-muted-foreground">
                             {event.city}
                           </span>
-                          <Separator orientation="vertical" className="h-5" />
-                          <Link
+                          {/* TODO: Removido por enquanto  */}
+                          {/* <Separator orientation="vertical" className="h-5" /> */}
+                          {/* <Link
                             to={`/event/${event.slug}`}
                             className="cursor-pointer text-sm font-bold text-rose-700 transition-colors hover:text-red-800"
                           >
@@ -101,13 +109,9 @@ export function Home() {
                               />
                               Programação
                             </p>
-                          </Link>
+                          </Link> */}
                         </div>
-                        {event.theme && (
-                          <p className="text-sm font-semibold tracking-tight">
-                            Tema: {event.theme}
-                          </p>
-                        )}
+                        
                       </div>
                     </motion.div>
                   </div>
