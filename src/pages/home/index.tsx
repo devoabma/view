@@ -1,4 +1,3 @@
-import { Info } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { CalendarX2, MousePointerClick } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
