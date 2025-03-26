@@ -102,6 +102,11 @@ export function Home() {
                           <Link
                             to={`/event/${event.slug}`}
                             className="cursor-pointer text-sm font-bold text-rose-700 transition-colors hover:text-red-800"
+                            onClick={() => {
+                              if (window.scrollY > 0) {
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }
+                            }}
                           >
                             <p className="flex items-center justify-center gap-1">
                               <Info
