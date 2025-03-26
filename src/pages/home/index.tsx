@@ -9,6 +9,7 @@ import { useGetHomeQuery } from '@/graphql/generated'
 import { getCurrentDateInfo } from '@/utils/get-current-date-info'
 
 import NotEvent from '../../assets/not-event.svg'
+import { Info } from '@phosphor-icons/react'
 
 export function Home() {
   const { data } = useGetHomeQuery()
@@ -80,7 +81,7 @@ export function Home() {
                       <div className="mt-2 space-y-2 w-full  text-center md:h-5">
                       {event.theme && (
                           <strong className="text-sm w-full  font-extrabold tracking-tight">
-                            {event.theme}
+                            {event.title}
                           </strong>
                         )}
 
@@ -91,13 +92,14 @@ export function Home() {
                         </p>
 
 
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-between">
                           <span className="text-muted-foreground">
                             {event.city}
                           </span>
-                          {/* TODO: Removido por enquanto  */}
-                          {/* <Separator orientation="vertical" className="h-5" /> */}
-                          {/* <Link
+
+                          <Separator orientation="vertical" className="h-5" />
+
+                          <Link
                             to={`/event/${event.slug}`}
                             className="cursor-pointer text-sm font-bold text-rose-700 transition-colors hover:text-red-800"
                           >
@@ -106,9 +108,9 @@ export function Home() {
                                 className="h-5 w-5 font-bold"
                                 weight="bold"
                               />
-                              Programação
+                              Informações
                             </p>
-                          </Link> */}
+                          </Link>
                         </div>
                         
                       </div>

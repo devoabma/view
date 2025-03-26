@@ -20,7 +20,7 @@ export function ContentMain({ data }: ContentMainProps) {
       </strong>
       {data.events?.theme && (
         <span className="text-sm tracking-tight text-gray-400 lg:text-lg">
-          Tema: {data?.events?.theme}
+          {data?.events?.theme}
         </span>
       )}
     </motion.div>
