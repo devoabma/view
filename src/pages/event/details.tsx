@@ -37,11 +37,16 @@ export function Details() {
       <li><strong>Plataforma:</strong> Aulas ao vivo no Google Classroom + atividades e modelos práticos</li>
       <li><strong>Networking exclusivo:</strong> Grupo fechado para troca de informações e dúvidas</li>
     </ul>
+
+    <h2 className="text-xl font-semibold text-slate-700 mb-3">Quantas mentorias posso escolher?</h2>
+      <p className="mb-4 text-lg font-bold text-center bg-yellow-100 p-3 rounded-lg">
+        Você pode escolher apenas <span className="underline">uma!</span> O objetivo é que cada participante opte pela mentoria mais alinhada à sua área de atuação, permitindo que mais jovens tenham a oportunidade de participar e se beneficiar do projeto.
+      </p>
     
     <div className="bg-slate-100 p-4 rounded-lg text-center mb-6">
       <h3 className="text-lg font-semibold text-slate-800">Oferta especial de lançamento!</h3>
       <p className="text-slate-700">Valor real: <span className="line-through">R$ 199,00</span></p>
-      <p className="text-xl font-bold text-red-600">Promoção exclusiva no dia 26/03: Apenas R$ 47,00</p>
+      <p className="text-xl font-bold text-red-600">Promoção exclusiva no dia 26/03: Apenas R$ 47,00 por mentoria</p>
     </div>
     
     <p className="text-center font-semibold text-red-500">Serão vagas limitadas. Então, garanta já a sua!</p>
