@@ -1,6 +1,6 @@
 export function Details() {
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-2xl text-slate-900 mb-6">
+    <div className="max-w-2xl mx-6 md:mx-auto p-6 bg-white shadow-lg rounded-2xl text-slate-900 mb-6">
     <h1 className="text-2xl font-bold text-center text-slate-800 mb-4">
       Jovem Advocacia, sejam todos bem-vindos!
     </h1>
