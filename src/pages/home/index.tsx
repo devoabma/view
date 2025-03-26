@@ -42,7 +42,7 @@ export function Home() {
           </motion.h1>
 
           {data.event.length >= 1 ? (
-            <div className="mx-auto mt-16 grid min-h-screen w-80 flex-1 place-items-start md:gap-14 sm:gap-x-10 md:w-[43.75rem] md:grid-cols-2 md:pb-14 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5 lg:pb-14">
+            <div className="mx-auto mt-16 grid min-h-screen w-80 flex-1 place-items-start md:gap-14 sm:gap-x-10 md:w-[43.75rem] md:grid-cols-2 md:pb-14 md:px-10 lg:w-[59.37rem] lg:grid-cols-3 lg:px-5 lg:pb-20">
               {data.event.map((event) => {
                 return (
                   <div key={event.slug} className="mb-10 flex flex-col gap-2">
@@ -79,7 +79,7 @@ export function Home() {
                       transition={{ duration: 0.9, delay: 0.5 }}
                     >
                       <div className="mt-2 space-y-2 w-full  text-center md:h-5">
-                      {event.theme && (
+                      {event.title && (
                           <strong className="text-sm w-full  font-extrabold tracking-tight">
                             {event.title}
                           </strong>
