@@ -92,7 +92,7 @@ export function Home() {
                         </p>
 
 
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-center gap-3">
                           <span className="text-muted-foreground">
                             {event.city}
                           </span>
