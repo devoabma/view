@@ -60,9 +60,9 @@ export function Home() {
                             src={event.card.url}
                             // biome-ignore lint/a11y/noRedundantAlt: <explanation>
                             alt="Card Image"
-                            className="h-[420px] w-[300px] transform cursor-pointer object-cover shadow-custom"
+                            className="h-[420px] w-[300px] transform cursor-pointer object-cover shadow-custom rounded-md"
                           />
-                          <div className="absolute bottom-0 max-sm:w-[300px] left-0 right-0 m-0 flex items-center justify-center bg-rose-800 py-1 transition duration-300 ease-in-out">
+                          <div className="absolute bottom-0 max-sm:w-[300px] left-0 right-0 m-0 flex items-center justify-center rounded-md bg-rose-800 py-1 transition duration-300 ease-in-out">
                             <p className="flex items-center gap-2 text-center font-semibold text-white">
                               Inscreva-se
                               <MousePointerClick className="h-6 w-6" />
