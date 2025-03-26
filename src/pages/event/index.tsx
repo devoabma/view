@@ -5,7 +5,6 @@ import { Loading } from '@/components/app/loading'
 import { useGetEventBySlugQuery } from '@/graphql/generated'
 
 import { NotFound } from '../404'
-import { CardImages } from './card-image'
 import { ContentMain } from './content-main'
 import { Details } from './details'
 
