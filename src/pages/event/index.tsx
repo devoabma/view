@@ -6,7 +6,6 @@ import { useGetEventBySlugQuery } from '@/graphql/generated'
 
 import { NotFound } from '../404'
 import { ContentMain } from './content-main'
-import { Details } from './details'
 import { CardImages } from './card-image'
 
 export function Event() {
