@@ -1,8 +1,10 @@
+import { Suspense } from 'react'
 import { ApolloProvider } from '@apollo/client'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from 'react-router-dom'
 
+import { Loading } from './components/app/loading'
 import { Toaster } from './components/ui/sonner'
 import { client } from './lib/apollo'
 import { queryClient } from './lib/react-query'
@@ -16,7 +18,9 @@ export function App() {
       </Helmet>
       <ApolloProvider client={client}>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
+          <Suspense fallback={<Loading />}>
+            <RouterProvider router={router} />
+          </Suspense>
           <Toaster richColors position="top-center" />
         </QueryClientProvider>
       </ApolloProvider>
