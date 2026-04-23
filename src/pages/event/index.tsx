@@ -7,6 +7,7 @@ import { useGetEventBySlugQuery } from '@/graphql/generated'
 import { NotFound } from '../404'
 import { ContentMain } from './content-main'
 import { Details } from './details'
+import { CardImages } from './card-image'
 
 export function Event() {
   const { slug } = useParams<{ slug: string }>()
@@ -27,10 +28,10 @@ export function Event() {
             <>
               {/* biome-ignore lint/style/noNonNullAssertion: <explanation> */}
               <ContentMain data={data!} />
-              {/* <CardImages data={data!} /> */}
+              <CardImages data={data!} />
 
               {/* FIXME: Adicionado página de detalhes */}
-              <Details />
+              {/* <Details /> */}
             </>
           ) : (
             <NotFound />
