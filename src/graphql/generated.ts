@@ -445,31 +445,8 @@ export type AssetUpdateManyInlineInput = {
 };
 
 export type AssetUpdateManyInput = {
-  fileName?: InputMaybe<Scalars['String']['input']>;
-  /** Optional updates to localizations */
-  localizations?: InputMaybe<AssetUpdateManyLocalizationsInput>;
-  /** Use this to define if its a reupload for the asset */
-  reUpload?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Optionally the system can upload a file for you, for that you need to provide a publicly accessible url */
-  uploadUrl?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AssetUpdateManyLocalizationDataInput = {
-  fileName?: InputMaybe<Scalars['String']['input']>;
-  /** Use this to define if its a reupload for the asset */
-  reUpload?: InputMaybe<Scalars['Boolean']['input']>;
-  /** Optionally the system can upload a file for you, for that you need to provide a publicly accessible url */
-  uploadUrl?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AssetUpdateManyLocalizationInput = {
-  data: AssetUpdateManyLocalizationDataInput;
-  locale: Locale;
-};
-
-export type AssetUpdateManyLocalizationsInput = {
-  /** Localizations to update */
-  update?: InputMaybe<Array<AssetUpdateManyLocalizationInput>>;
+  /** No fields in updateMany data input */
+  _?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AssetUpdateManyWithNestedWhereInput = {
@@ -3877,6 +3854,7 @@ export enum _FilterKind {
   ContainsAll = 'contains_all',
   ContainsNone = 'contains_none',
   ContainsSome = 'contains_some',
+  DescendantsOf = 'descendants_of',
   EndsWith = 'ends_with',
   Eq = 'eq',
   EqNot = 'eq_not',
@@ -4012,8 +3990,8 @@ export function useGetEventBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<GetEventBySlugQuery, GetEventBySlugQueryVariables>(GetEventBySlugDocument, options);
         }
-export function useGetEventBySlugSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetEventBySlugQuery, GetEventBySlugQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useGetEventBySlugSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetEventBySlugQuery, GetEventBySlugQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<GetEventBySlugQuery, GetEventBySlugQueryVariables>(GetEventBySlugDocument, options);
         }
 export type GetEventBySlugQueryHookResult = ReturnType<typeof useGetEventBySlugQuery>;
@@ -4063,8 +4041,8 @@ export function useGetHomeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Ge
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<GetHomeQuery, GetHomeQueryVariables>(GetHomeDocument, options);
         }
-export function useGetHomeSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetHomeQuery, GetHomeQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useGetHomeSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetHomeQuery, GetHomeQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<GetHomeQuery, GetHomeQueryVariables>(GetHomeDocument, options);
         }
 export type GetHomeQueryHookResult = ReturnType<typeof useGetHomeQuery>;
