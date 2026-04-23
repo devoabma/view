@@ -18,10 +18,6 @@ export default defineConfig({
             return undefined
           }
 
-          if (id.includes('@apollo/client') || id.includes('graphql')) {
-            return 'apollo'
-          }
-
           if (id.includes('@tanstack/react-query')) {
             return 'react-query'
           }
